@@ -1066,7 +1066,7 @@ body {
   background: #1639a3FF;
 }
 
-/* Rectangle */
+/* Rectangle1 */
 .rectangle-ba80e28c0737 {
   position: absolute;
   left: 0px;
@@ -1980,7 +1980,7 @@ M69 uniform */
   font-weight: 400;
 }
 
-/* Rectangle */
+/* Rectangle1 */
 .rectangle-b506b75bcfd0 {
   position: absolute;
   left: 1834px;
@@ -2515,7 +2515,7 @@ Moleskin uniform */
   font-weight: 400;
 }
 
-/* Rectangle */
+/* Rectangle1 */
 .rectangle-b5053fa9cd12 {
   position: absolute;
   left: 1834px;
