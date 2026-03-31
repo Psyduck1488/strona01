@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NW</title>
     <link rel="stylesheet" href="style.css">
-    <style
-    </style>
+    <style>
+    
 
 html, body {
   margin: 0;
@@ -2515,7 +2515,7 @@ Moleskin uniform */
   font-weight: 400;
 }
 
-/* Rectangle1 */
+/* Rectangle */
 .rectangle-b5053fa9cd12 {
   position: absolute;
   left: 1834px;
@@ -3464,9 +3464,6 @@ PACT */
   background: #cf0000FF;
 }
 </style>
-
-</head>
-<body>
 
 <!-- frame: Board -->
 <div class="frame board-ba7fefdebbb0">
