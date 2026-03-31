@@ -1,0 +1,20 @@
+/* style.css */
+.primary-button {
+  /* Wartości wzięte prosto z Penpota */
+  width: 200px;
+  height: 56px;
+  background-color: #6200EE;
+  border-radius: 8px;
+  color: #FFFFFF;
+  
+  /* Twoja praca: dodanie logiki, której Penpot nie wygeneruje idealnie */
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.primary-button:hover {
+  background-color: #3700B3; /* Lekka modyfikacja na hover */
+}

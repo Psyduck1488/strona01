@@ -1,655 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NW</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Symulacja Sił Zbrojnych</title>
+    
+    <style>
+        /* TUTAJ TRAFIA TWÓJ KOD CSS */
+     
+
+        html, body {
+            margin: 0;
+            min-height: 100%;
+            min-width: 100%;
+            padding: 0;
+            background-color: #f0f0f0; /* dodałem tło, żeby widzieć planszę */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw;
+            min-height: 100vh;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Kontener główny (Board) */
+        .board-ba7fefdebbb0 {
+            position: relative;
+            width: 1920px;
+            height: 1080px;
+            background: #FFFFFF;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            overflow: hidden;
+            z-index: 0;
+            margin-top: 20px;
+        }
+
+        /* Stylizacja tekstu */
+        .text-node { 
+            background-clip: text !important; 
+            -webkit-background-clip: text !important; 
+        }
+
+        .root-0 {
+            display: flex;
+            white-space: break-spaces;
+            align-items: flex-start;
+        }
+
+        /* Pozycjonowanie elementów (Twoje klasy) */
+        .artyleria-ba864168a18e {
+            position: absolute;
+            left: 50px; /* skorygowałem wartości, by były widoczne */
+            top: 650px;
+            width: 178px;
+            height: 50px;
+            font-size: 48px;
+            font-family: "sourcesanspro";
+        }
+
+        .artyleria-ba8650da3883 {
+            position: absolute;
+            left: 1600px;
+            top: 650px;
+            width: 173px;
+            height: 55px;
+            font-size: 48px;
+            font-family: "sourcesanspro";
+        }
+
+        .rectangle-ba873a408d60 {
+            position: absolute;
+            left: 1800px;
+            top: 1000px;
+            width: 98px;
+            height: 51px;
+            background: #ae1212;
+        }
+
+        /* Przykładowy styl dla listy wyposażenia */
+        .a-k-m-a-k-s74-ba77e73ce824 {
+            position: absolute;
+            left: 1430px;
+            top: 100px;
+            font-family: "sourcesanspro";
+            line-height: 1.5;
+        }
+        
+        p { margin: 0; }
+    </style>
 </head>
 <body>
 
-<!-- frame: Board -->
-<div class="frame board-ba7fefdebbb0">
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba80e28c0737">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba80a1988440">
-  </div>
-  <!-- text: Siły własne           -->
-  <div class="shape text siy-wasn-ba813af8988d">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba813af8988d" data-x="-512" data-y="-2413">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">Siły własne </span></p>
+    <div class="frame board-ba7fefdebbb0">
+        
+        <div class="shape rect rectangle-ba873a408d60"></div>
+
+        <div class="shape text artyleria-ba864168a18e">
+            <div class="root rich-text root-0">
+                <p>artyleria</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: Siły własne           -->
-  <div class="shape text siy-wasn-ba817296cc69">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba817296cc69" data-x="1169" data-y="-2413">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">Siły własne </span></p>
+
+        <div class="shape text artyleria-ba8650da3883">
+            <div class="root rich-text root-0">
+                <p>artyleria</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: Straty -->
-  <div class="shape text straty-ba819ca3154e">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba819ca3154e" data-x="-114" data-y="-2413">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">Straty</span></p>
+
+        <div class="shape text a-k-m-a-k-s74-ba77e73ce824">
+            <div class="root rich-text root-0">
+                <div class="paragraph-set">
+                    <p><strong>Wyposażenie ZSRR:</strong></p>
+                    <p>AKM</p>
+                    <p>AKS-74U</p>
+                    <p>PK machine gun</p>
+                    <p>RPG-7</p>
+                    <p>Makarov pistol</p>
+                    <p>SSh-68 helmet</p>
+                </div>
+            </div>
         </div>
-      </div>
+
     </div>
-  </div>
-  <!-- text: Straty -->
-  <div class="shape text straty-ba81a64e1572">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba81a64e1572" data-x="877" data-y="-2413">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">Straty</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: pozaostało  -->
-  <div class="shape text pozaostao-ba81ae9c2ca4">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba81ae9c2ca4" data-x="197" data-y="-2415">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">pozaostało </span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: pozostało -->
-  <div class="shape text pozostao-ba81beb64b09">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba81beb64b09" data-x="478" data-y="-2413">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">pozostało</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba8204488d3d">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba82eeae10ec">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba82fc0a38d2">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba821b1ca66a">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba8241393c3d">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba8259255d49">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba82aa66db6d">
-  </div>
-  <!-- text: inne obliczenia -->
-  <div class="shape text inne-oblic-ba82b5ee38b3">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba82b5ee38b3" data-x="274" data-y="-1524">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">inne obliczenia</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba831b583821">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba8321220df2">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba832e165c0b">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba8334887f5f">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba838e8ec045">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba839508bba0">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba839c06ad4e">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba83a10aa6f2">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba83a84aa799">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba83ac76afa0">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba83b1d0187f">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba83b712b515">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba83bd3b39b6">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba83c4dc3c1c">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba8314ae234c">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba8328281716">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba85347493e3">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba853bf27cb9">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba8542f2ef99">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba854b0a1472">
-  </div>
-  <!-- text: ludzie -->
-  <div class="shape text ludzie-ba85b698e2b0">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba85b698e2b0" data-x="-512" data-y="-2346">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">ludzie</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: ludzie -->
-  <div class="shape text ludzie-ba85a7ce4b39">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba85a7ce4b39" data-x="1277" data-y="-2352">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">ludzie</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: czołgi -->
-  <div class="shape text czogi-ba85d26924f0">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba85d26924f0" data-x="-512" data-y="-2158">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">czołgi</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: czołgi -->
-  <div class="shape text czogi-ba85bc2ea9dc">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba85bc2ea9dc" data-x="1270.4603564986" data-y="-2159.062713514793">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">czołgi</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: pojazdy lekkie -->
-  <div class="shape text pojazdy-le-ba8621007ac2">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba8621007ac2" data-x="-512" data-y="-1952">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">pojazdy lekkie</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: pojazdy lekkie -->
-  <div class="shape text pojazdy-le-ba863a305df3">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba863a305df3" data-x="1107" data-y="-1950">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">pojazdy lekkie</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: artyleria -->
-  <div class="shape text artyleria-ba8650da3883">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba8650da3883" data-x="1225" data-y="-1763">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">artyleria</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: artyleria -->
-  <div class="shape text artyleria-ba864168a18e">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba864168a18e" data-x="-512" data-y="-1763">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">artyleria</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba873a408d60">
-  </div>
-  <!-- text: X -->
-  <div class="shape text x-ba874824a49a">
-    <div class="text-node-html" id="html-text-node-13bfa16d-f698-80f7-8007-ba874824a49a" data-x="1356" data-y="-1366">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">X</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- frame: Board -->
-<div class="frame board-b4301f7c2cd2">
-  <!-- rect: OIP.eMjKVpZpE1YcuVqa7lDjBAHaFL -->
-  <div class="shape rect o-i-pe-mj-k-vp-b441aafa7f1e">
-  </div>
-  <!-- rect: OIP.htN0QxjC6FYWPBi_KuoUgAAAAA -->
-  <div class="shape rect o-i-pht-n0-qx-b442236cf7d5">
-  </div>
-  <!-- rect: OIP.tAIueA_kaovZMIPvtSTPXAHaEc -->
-  <div class="shape rect o-i-pt-a-iue-a-b4432c9175ea">
-  </div>
-  <!-- rect: OIP.IKraXsrG74-d_0haDZhJTwHaE8 -->
-  <div class="shape rect o-i-p-i-kra-xs-b442cabb1fae">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-b506b75bcfd0">
-  </div>
-  <!-- text: X -->
-  <div class="shape text x-b506b75c1c25">
-    <div class="text-node-html" id="html-text-node-cd9a9bbc-cbab-80a1-8007-b506b75c1c25" data-x="3303" data-y="-1102">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">X</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: AKM
-AKS-74U
-PK machine gun
-RPG-7
-Makarov pistol
-Soviet belt equipment
-SSh-68 helmet
-M69 uniform -->
-  <div class="shape text a-k-m-a-k-s74-ba77e73ce824">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba77e73ce824" data-x="1430" data-y="-1109">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">AKM</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-1" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-1-text-0">AKS-74U</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-2" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-2-text-0">PK machine gun</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-3" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-3-text-0">RPG-7</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-4" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-4-text-0">Makarov pistol</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-5" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-5-text-0">Soviet belt equipment</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-6" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-6-text-0">SSh-68 helmet</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-7" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-7-text-0">M69 uniform</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: AKM
-PM-63 RAK
-PK machine gun
-RPG-7
-P-64 pistol
-Polish belt equipment
-wz.67 helmet
-Moro uniform -->
-  <div class="shape text a-k-m-p-m63-ba7864c08d01">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba7864c08d01" data-x="1926" data-y="-1109">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">AKM</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-1" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-1-text-0">PM-63 RAK</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-2" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-2-text-0">PK machine gun</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-3" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-3-text-0">RPG-7</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-4" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-4-text-0">P-64 pistol</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-5" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-5-text-0">Polish belt equipment</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-6" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-6-text-0">wz.67 helmet</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-7" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-7-text-0">Moro uniform</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- rect: eb83e0f7-ec88-4c21-bcc5-a8b93f7cdda5 -->
-  <div class="shape rect eb83e0f7e-ba78a0b24405">
-  </div>
-  <!-- text: MPi-KM
-PM-63 RAK
-PK machine gun
-RPG-7
-Makarov pistol
-NVA web gear
-M56 helmet 
-Strichtarn uniform -->
-  <div class="shape text m-pi-k-m-p-m-ba79138712cf">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba79138712cf" data-x="2506" data-y="-1109">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">MPi-KM</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-1" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-1-text-0">PM-63 RAK</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-2" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-2-text-0">PK machine gun</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-3" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-3-text-0">RPG-7</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-4" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-4-text-0">Makarov pistol</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-5" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-5-text-0">NVA web gear</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-6" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-6-text-0">M56 helmet </span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-7" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-7-text-0">Strichtarn uniform</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: Sa vz. 58
-Sa vz. 61 Škorpion
-UK vz.59
-RPG-7
-CZ 52 pistol
-Czechoslovak web gear
-M53 helmet
-Vzor 60 uniform -->
-  <div class="shape text sa-vz-58-ba7a03148cde">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba7a03148cde" data-x="2893" data-y="-1109">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">Sa vz. 58</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-1" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-1-text-0">Sa vz. 61 Škorpion</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-2" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-2-text-0">UK vz.59</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-3" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-3-text-0">RPG-7</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-4" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-4-text-0">CZ 52 pistol</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-5" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-5-text-0">Czechoslovak web gear</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-6" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-6-text-0">M53 helmet</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-7" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-7-text-0">Vzor 60 uniform</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- rect: f0eebd58-6275-447f-9a64-71a5dacee9fd -->
-  <div class="shape rect f0eebd586-ba7b016dce53">
-  </div>
-</div>
-<!-- frame: Board -->
-<div class="frame board-b4288a0d4202">
-  <!-- rect: OIP.sFFYFbsMYaOMnPET26qxiQHaOE -->
-  <div class="shape rect o-i-ps-f-f-y-fb-b43c33d12362">
-  </div>
-  <!-- rect: OIP._FhSmdumCIIrWkp3mTcTvQHaEK -->
-  <div class="shape rect o-i-p-fh-smd-b43cbd3fe2de">
-  </div>
-  <!-- rect: OIP.Sa0gdodt4TyhdBoQEEuU6gHaEc -->
-  <div class="shape rect o-i-p-sa0gdo-b43da6ad9116">
-  </div>
-  <!-- rect: OIP.YGkZrqt3d88gXlDNO9JiyQHaEK -->
-  <div class="shape rect o-i-p-y-gk-zrq-b4406b2ef525">
-  </div>
-  <!-- text: M16A1 rifle -->
-  <div class="shape text m16-a1-rifl-b44461bcb5aa">
-    <div class="text-node-html" id="html-text-node-f2857ac5-c6df-8022-8007-b44461bcb5aa" data-x="-1934" data-y="-715">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">M16A1 rifle</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- rect: 7044822c-43be-43cf-8dd2-b33188d4998c -->
-  <div class="shape rect c-7044822c4-b445e95adc5a">
-  </div>
-  <!-- text: M3 Gun -->
-  <div class="shape text m3-gun-b447bc738785">
-    <div class="text-node-html" id="html-text-node-f2857ac5-c6df-8022-8007-b447bc738785" data-x="-1933" data-y="-674">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">M3 Gun</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: M60 MG -->
-  <div class="shape text m60-m-g-b4484f2eeccb">
-    <div class="text-node-html" id="html-text-node-f2857ac5-c6df-8022-8007-b4484f2eeccb" data-x="-1933" data-y="-628">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">M60 MG</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- rect: 855e909d-4017-4e25-a528-a3c4a0e961f0 -->
-  <div class="shape rect c-855e909d4-b4488ef4ce3b">
-  </div>
-  <!-- text: M72 LAW -->
-  <div class="shape text m72-l-a-w-b448df91fedd">
-    <div class="text-node-html" id="html-text-node-f2857ac5-c6df-8022-8007-b448df91fedd" data-x="-1933" data-y="-580">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">M72 LAW</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: M1911 pistol -->
-  <div class="shape text m1911-pist-b4491a9f9a66">
-    <div class="text-node-html" id="html-text-node-f2857ac5-c6df-8022-8007-b4491a9f9a66" data-x="-1933" data-y="-533">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">M1911 pistol</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: ALICE vest or belt -->
-  <div class="shape text a-l-i-c-e-vest-b4493b9d2851">
-    <div class="text-node-html" id="html-text-node-f2857ac5-c6df-8022-8007-b4493b9d2851" data-x="-1933.0000000000005" data-y="-489">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">ALICE vest or belt</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: M1 helmet -->
-  <div class="shape text m1-helmet-b44ac3de9b3f">
-    <div class="text-node-html" id="html-text-node-f2857ac5-c6df-8022-8007-b44ac3de9b3f" data-x="-1932" data-y="-387">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">M1 helmet</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- rect: d00597be-5231-47e2-b76d-e50e74a0cf78 -->
-  <div class="shape rect d00597be5-b44ae0c29648">
-  </div>
-  <!-- text: OG-107 uniform -->
-  <div class="shape text o-g107-uni-b44b51e7768f">
-    <div class="text-node-html" id="html-text-node-f2857ac5-c6df-8022-8007-b44b51e7768f" data-x="-1932" data-y="-337">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">OG-107 uniform</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: L1A1 Rifle
-Sterling gun
-L7 GPMG
-Carl Gustaf 
-MK IV helmet
-DPM camouflage uniform
- -->
-  <div class="shape text l1-a1-rifle-b44d2798ae8e">
-    <div class="text-node-html" id="html-text-node-f2857ac5-c6df-8022-8007-b44d2798ae8e" data-x="-1393" data-y="-1150.9999999999998">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">L1A1 Rifle</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-1" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-1-text-0">Sterling gun</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-2" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-2-text-0">L7 GPMG</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-3" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-3-text-0">Carl Gustaf </span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-4" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-4-text-0">MK IV helmet</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-5" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-5-text-0">DPM camouflage uniform</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-6" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-6-text-0"> </span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-b5053fa9cd12">
-  </div>
-  <!-- text: X -->
-  <div class="shape text x-b505847155cc">
-    <div class="text-node-html" id="html-text-node-cd9a9bbc-cbab-80a1-8007-b505847155cc" data-x="-60" data-y="-1141">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">X</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text:  Koch G3
-Koch MP2
-MG3 
-Super Bazuka
-Walther P38
-Bundeswehr web gear
-M56 helmet 
-Moleskin uniform -->
-  <div class="shape text koch-g3-k-ba74848b23d6">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba74848b23d6" data-x="-698" data-y="-705">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0"> Koch G3</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-1" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-1-text-0">Koch MP2</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-2" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-2-text-0">MG3 </span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-3" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-3-text-0">Super Bazuka</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-4" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-4-text-0">Walther P38</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-5" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-5-text-0">Bundeswehr web gear</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-6" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-6-text-0">M56 helmet </span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-7" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-7-text-0">Moleskin uniform</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: MAS-49 
-MAT-49
-AA-52 machine gun
-LRAC F1
-MAC 1950 
-F1 web gear
-M51 helmet 
-F1 uniform -->
-  <div class="shape text m-a-s49-m-a-ba75ce911b4e">
-    <div class="text-node-html" id="html-text-node-75216f44-c9a7-80d6-8007-ba75ce911b4e" data-x="-446" data-y="-1149">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">MAS-49 </span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-1" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-1-text-0">MAT-49</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-2" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-2-text-0">AA-52 machine gun</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-3" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-3-text-0">LRAC F1</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-4" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-4-text-0">MAC 1950 </span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-5" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-5-text-0">F1 web gear</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-6" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-6-text-0">M51 helmet </span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-7" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-7-text-0">F1 uniform</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- rect: f5b11282-250d-4408-93e1-82319f9d5913 -->
-  <div class="shape rect f5b112822-ba770c761823">
-  </div>
-</div>
-<!-- frame: Board -->
-<div class="frame board-b4069754fd36">
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-b406eb362ea6">
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-b4071aae675d">
-  </div>
-  <!-- rect: OIP.1rVLkjFQb78zOKCeAruXowHaFj -->
-  <div class="shape rect o-i-p1r-v-lkj-b42eebe0f4a5">
-  </div>
-  <!-- rect: OIP.0cRS75dTqEP_3tUaR-8pcQHaEK -->
-  <div class="shape rect o-i-p0c-r-s75-b42fbde31914">
-  </div>
-  <!-- text: NATO -->
-  <div class="shape text n-a-t-o-b40991d3d6d4">
-    <div class="text-node-html" id="html-text-node-ed12e8c2-8133-80a4-8007-b40991d3d6d4" data-x="189" data-y="889">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">NATO</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: WARSAW
-PACT -->
-  <div class="shape text w-a-r-s-a-w-p-a-c-b40b8027b7e3">
-    <div class="text-node-html" id="html-text-node-ed12e8c2-8133-80a4-8007-b40b8027b7e3" data-x="1107" data-y="868">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">WARSAW</span></p>
-          <p class="paragraph root-0-paragraph-set-0-paragraph-1" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-1-text-0">PACT</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: 1977 -->
-  <div class="shape text c-1977-b5047fed5609">
-    <div class="text-node-html" id="html-text-node-cd9a9bbc-cbab-80a1-8007-b5047fed5609" data-x="871" data-y="488">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">1977</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba87731c0dff">
-  </div>
-  <!-- text: calculator -->
-  <div class="shape text calculator-ba87824ccc2c">
-    <div class="text-node-html" id="html-text-node-13bfa16d-f698-80f7-8007-ba87824ccc2c" data-x="874.0000000000001" data-y="1432">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">calculator</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- text: warning!:not all words is translated -->
-  <div class="shape text warning-n-ba86ab2a56e3">
-    <div class="text-node-html" id="html-text-node-13bfa16d-f698-80f7-8007-ba86ab2a56e3" data-x="819" data-y="1482">
-      <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
-        <div class="paragraph-set root-0-paragraph-set-0">
-          <p class="paragraph root-0-paragraph-set-0-paragraph-0" dir="ltr"><span class="text-node root-0-paragraph-set-0-paragraph-0-text-0">warning!:not all words is translated</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    </body>
+
+</body>
 </html>
