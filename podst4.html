@@ -47,6 +47,8 @@ body {
   top: 1047px;
   width: 7px;
   height: 13px;
+   cursor: pointer; 
+  transition: opacity 0.2s
 }
 .x-ba874824a49a .root-0 {
   
@@ -94,6 +96,8 @@ body {
   width: 98px;
   height: 51px;
   background: #ae1212FF;
+  cursor: pointer; 
+  transition: opacity 0.2s;
 }
 
 /* artyleria */
@@ -719,7 +723,9 @@ body {
   width: 349px;
   height: 128px;
   background: #B1B2B5FF;
+  
 }
+
 
 /* Rectangle */
 .rectangle-ba8259255d49 {
@@ -1075,13 +1081,16 @@ body {
   width: 960px;
   height: 1080px;
   background: #ae1212FF;
+
 }
+
 </style>
+
 
 <!-- frame: Board -->
 <div class="frame board-ba7fefdebbb0">
   <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba80e28c0737">
+  <div class="shape rect rectangle-ba80e28c0737" >
   </div>
   <!-- rect: Rectangle -->
   <div class="shape rect rectangle-ba80a1988440">
@@ -1318,10 +1327,10 @@ body {
     </div>
   </div>
   <!-- rect: Rectangle -->
-  <div class="shape rect rectangle-ba873a408d60">
+  <div class="shape rect rectangle-ba873a408d60" onclick="window.location.href='podst1p.html'">
   </div>
   <!-- text: X -->
-  <div class="shape text x-ba874824a49a">
+  <div class="shape text x-ba874824a49a" onclick="window.location.href='podst1p.html'">
     <div class="text-node-html" id="html-text-node-13bfa16d-f698-80f7-8007-ba874824a49a" data-x="1356" data-y="-1366">
       <div class="root rich-text root-0" xmlns="http://www.w3.org/1999/xhtml">
         <div class="paragraph-set root-0-paragraph-set-0">
@@ -1331,5 +1340,57 @@ body {
     </div>
   </div>
 </div>
+<!-- TWÓJ PROSTOKĄT Z KALKULATOREM -->
+<div class="rectangle-ba82aa66db6d">
+  <div class="calculator">
+    <input type="text" id="display" placeholder="Calculator">
+    <div id="result"></div>
+  </div>
+</div>
+
+<style>
+.calculator {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#display {
+  width: 90%;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+#result {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+</style>
+
+<script>
+const display = document.getElementById("display");
+const result = document.getElementById("result");
+
+// liczenie po kliknięciu ENTER
+display.addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    calculate();
+  }
+});
+
+function calculate() {
+  try {
+    let value = eval(display.value);
+    result.textContent = "Wynik: " + value;
+  } catch {
+    result.textContent = "Błąd!";
+  }
+}
+</script>
 
 </head>
